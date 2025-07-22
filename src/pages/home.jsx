@@ -2,9 +2,18 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../context';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import Newfunc from '../components/hooks/newfunc';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUserData } from '../components/redux/reducer';
 
 export default function Home() {
     const { theme, settheme } = useContext(ThemeContext);
+    let dispatch = useDispatch()
+    let { data, loading, error } = useSelector((state) => state.users)
+    useEffect(()=>{
+        dispatch(fetchUserData())
+    },[dispatch]) 
+    console.log(data)
 
     const toggletheme = () => {
         settheme(!theme)
@@ -38,12 +47,13 @@ export default function Home() {
                     >
                         Show Posts
                     </button>
-                    <Link to="/todolist"
+                    <Link to="/todo"
                         className="m-4 px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-400">
                         TODO List
                     </Link>
                 </div>
             </div>
+            <Newfunc />
         </div>
     );
 }

@@ -21,12 +21,12 @@ export default function Postdetails() {
     console.log(postData)
     return (
         <>
-            <Link to="/home" className="back flex items-center cursor-pointer">
+            <Link to="/home" className="back flex items-center cursor-pointer m-5">
                 <FaArrowLeft className='mx-2' />
                 Back to home
             </Link>
-            <div>
-                <h1>Post Details</h1>
+            <div className="p-7 ">
+                <h1 className="text-2xl font-semibold">Post Details</h1>
                 {postData ? (
                     <div>
                         <h2>{postData.title}</h2>

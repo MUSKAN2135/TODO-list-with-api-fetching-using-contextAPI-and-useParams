@@ -7,9 +7,9 @@ import Users from './pages/users';
 import Postdetails from './pages/postdetails';
 import Post from './pages/posts';
 import Userdetails from './pages/userdetails';
-import Tasks from './pages/todotasks';
 import Todo from './pages/todo';
 import { ToastContainer } from 'react-toastify';
+import Todolist from './pages/todolists';
 AOS.init({
   duration: 800, // Animation duration in milliseconds
   easing: 'ease-in-out', // Easing function
@@ -33,8 +33,8 @@ export default function App() {
               <Route path="/user/:id" element={<Userdetails />} />
               <Route path='/post' element={<Post />} />
               <Route path="/post/:id" element={<Postdetails />} />
-              <Route path='/todolist' element={<Todo />} />
-              <Route path='/todotasks' element={<Tasks />} />
+              <Route path='/todo' element={<Todo />} />
+              <Route path='/todotasks' element={<Todolist />} />
             </Routes>
           </UsersContext.Provider>
         </PostsContext.Provider>

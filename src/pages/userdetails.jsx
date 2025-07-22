@@ -21,12 +21,12 @@ export default function Userdetails() {
     console.log(userData)
     return (
         <>
-            <Link to="/home" className="back flex items-center cursor-pointer">
+            <Link to="/home" className="back flex items-center cursor-pointer m-5">
                 <FaArrowLeft className='mx-2' />
                 Back to home
             </Link>
-            <div>
-                <h1>User Details</h1>
+            <div className="p-8">
+                <h1 className="text-2xl font-semibold">User Details</h1>
                 {userData ? (
                     <div>
                         <h2>username:{userData.username}</h2>
